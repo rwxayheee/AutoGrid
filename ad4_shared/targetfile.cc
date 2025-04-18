@@ -31,7 +31,11 @@ static const char* const ident[] = {ident[1], "@(#)$Id: targetfile.cc,v 1.1 2020
 #include <stdio.h> // for fgets()
 #include <ctype.h> // for isspace()
 #include <string.h>
+#ifdef _WIN32
+#include <win_compat.h>
+#else
 #include <unistd.h> // for mkstemps()
+#endif
 #include "autocomm.h"
 #include "parse_dpf_line.h"
 #include "dpftoken.h"
