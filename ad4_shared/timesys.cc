@@ -24,7 +24,11 @@ Copyright (C) 2009 The Scripps Research Institute. All rights reserved.
 
  */
 
-#include <unistd.h>
+ #ifdef _WIN32
+ #include <win_compat.h>
+ #else
+ #include <unistd.h>
+ #endif
 
 #ifdef HAVE_CONFIG_H
 #   include <config.h>

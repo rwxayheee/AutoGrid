@@ -1,6 +1,7 @@
 #ifdef _WIN32
 #ifndef WIN_COMPAT_H
 #define WIN_COMPAT_H
+#define HAVE_SYS_TIME_H
 
 #include <io.h>
 #include <direct.h>

@@ -28,7 +28,11 @@ Copyright (C) 2009 The Scripps Research Institute. All rights reserved.
 #include <stdio.h>
 #include <sys/types.h>
 
+#ifdef _WIN32
+#include <win_compat.h>
+#else
 #include <sys/time.h>
+#endif
 
 #ifdef HAVE_CONFIG_H
 #   include <config.h>
