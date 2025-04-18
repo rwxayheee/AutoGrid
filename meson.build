@@ -33,6 +33,7 @@ else
         '-DUSE_DOUBLE',
         '-DPACKAGE_BUGREPORT="autodock@scripps.edu"'  # Replace with actual email
     ]
+endif
 
 if openmp_dep.found()
     common_flags += ['-fopenmp']
