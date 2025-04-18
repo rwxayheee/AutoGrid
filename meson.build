@@ -93,15 +93,13 @@ sources = files(
     # 'version.h' 
 )
 
-csh_command = find_program('tcsh')
+python = import('python').find_installation()
 
-# Custom command to generate `default_parameters.h`
 gen_default_params = custom_target(
-    'default_parameters.h',
-    output : ['default_parameters.h'],
-    command : [csh_command, 
-        '../ad4_shared/paramdat2h.csh', '../ad4_shared/AD4_parameters.dat', '../ad4_shared/AD4.1_bound.dat'],
-    capture: true)
+  'default_parameters.h',
+  output : ['default_parameters.h'],
+  command : [python, '../ad4_shared/paramdat2h.py', '../ad4_shared/AD4_parameters.dat', '../ad4_shared/AD4.1_bound.dat'],
+  capture: true)
 
 # Add generated header to the sources
 sources += gen_default_params
