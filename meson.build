@@ -7,7 +7,11 @@ project('autogrid', 'cpp',
 cc = meson.get_compiler('cpp')
 
 # Dependencies
-m_dep = cc.find_library('m', required: true)  # Math library (libm)
+if host_machine.system() == 'windows'
+  m_dep = []  # math functions are in the runtime
+else
+  m_dep = cc.find_library('m', required: true) # Math library (libm)
+endif
 openmp_dep = dependency('openmp', required: false)  # OpenMP if available
 
 # Compiler flags
