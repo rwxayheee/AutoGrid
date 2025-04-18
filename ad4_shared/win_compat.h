@@ -20,11 +20,7 @@
 #define isatty     _isatty
 #define fileno     _fileno
 
-// timeval replacement
-struct timeval {
-  long tv_sec;
-  long tv_usec;
-};
+#include <winsock.h> // provides struct timeval
 
 inline int gettimeofday(struct timeval* tp, void*) {
   FILETIME ft;

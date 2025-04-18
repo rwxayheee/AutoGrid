@@ -28,6 +28,7 @@ Copyright (C) 2009 The Scripps Research Institute. All rights reserved.
 #else
 #include <sys/param.h>
 #include <unistd.h> /* long sysconf(int name) */
+#include <strings.h>  // for bzero() on Solaris
 #endif
 
 #include <sys/types.h>
@@ -44,7 +45,6 @@ Copyright (C) 2009 The Scripps Research Institute. All rights reserved.
 #include <stdio.h>
 #include <search.h>
 #include <string.h>
-#include <strings.h>  // for bzero() on Solaris
 #include <time.h>
 #include <stdlib.h>
 #ifndef HAVE_SYSCONF
