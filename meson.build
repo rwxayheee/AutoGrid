@@ -36,7 +36,11 @@ else
 endif
 
 if openmp_dep.found()
+  if cc.get_id() == 'msvc'
+    common_flags += ['/openmp']
+  else
     common_flags += ['-fopenmp']
+  endif
 endif
 
 # Platform-specific flags
