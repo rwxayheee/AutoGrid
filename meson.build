@@ -15,14 +15,24 @@ endif
 openmp_dep = dependency('openmp', required: false)  # OpenMP if available
 
 # Compiler flags
-common_flags = [
-    '-Wall',  # All warnings
-    '-O3',    # Aggressive optimization
-    '-Wno-write-strings',  # Compatibility with older compilers
-    '-DUSE_8A_NBCUTOFF',   # Preprocessor defines
-    '-DUSE_DOUBLE',
-    '-DPACKAGE_BUGREPORT="autodock@scripps.edu"'  # Replace with actual email
-]
+if cc.get_id() == 'msvc'
+  common_flags = [
+    '/W3',              # Equivalent to -Wall
+    '/O2',              # Optimization
+    '/DWIN32',          # Define WIN32 macro
+    '/DUSE_8A_NBCUTOFF',
+    '/DUSE_DOUBLE',
+    '/DPACKAGE_BUGREPORT="autodock@scripps.edu"'
+  ]
+else
+    common_flags = [
+        '-Wall',  # All warnings
+        '-O3',    # Aggressive optimization
+        '-Wno-write-strings',  # Compatibility with older compilers
+        '-DUSE_8A_NBCUTOFF',   # Preprocessor defines
+        '-DUSE_DOUBLE',
+        '-DPACKAGE_BUGREPORT="autodock@scripps.edu"'  # Replace with actual email
+    ]
 
 if openmp_dep.found()
     common_flags += ['-fopenmp']
