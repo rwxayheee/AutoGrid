@@ -29,7 +29,11 @@ Copyright (C) 2009 The Scripps Research Institute. All rights reserved.
 #include <string.h>
 #include "autogrid.h"
 #include "constants.h"
+#ifdef _WIN32
+#include <win_compat.h>
+#else
 #include <unistd.h>
+#endif
 #include <stdlib.h> // POSIX definitions of EXIT_SUCCESS and EXIT_FAILURE
 
 extern FILE *GPF;

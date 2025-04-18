@@ -20,7 +20,11 @@
 #define isatty     _isatty
 #define fileno     _fileno
 
-#include <winsock.h> // provides struct timeval
+#ifndef bzero
+#define bzero(ptr, size) memset((ptr), 0, (size))
+#endif
+
+#include <winsock2.h> // provides struct timeval
 
 inline int gettimeofday(struct timeval* tp, void*) {
   FILETIME ft;
