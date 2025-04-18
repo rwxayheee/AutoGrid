@@ -34,7 +34,7 @@ Copyright (C) 2009 The Scripps Research Institute. All rights reserved.
 #include <sys/times.h>
 #else
 #ifdef _WIN32
-#include "mingw_sys_times.h"
+#include "win_compat.h"
 #else 
 #include <sys/times.h>
 #endif

@@ -23,9 +23,13 @@ Copyright (C) 2009 The Scripps Research Institute. All rights reserved.
  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 
  */
-
+#ifdef _WIN32
+#include <win_compat.h>
+#else
 #include <sys/param.h>
 #include <unistd.h> /* long sysconf(int name) */
+#endif
+
 #include <sys/types.h>
 #include <ctype.h> /* tolower,isascii,isdigit */
 #ifdef NOTNEEDED
@@ -45,7 +49,7 @@ Copyright (C) 2009 The Scripps Research Institute. All rights reserved.
 #include <stdlib.h>
 #ifndef HAVE_SYSCONF
 #ifdef _WIN32
-#include "mingw_sysconf.h" // for sysconf(_SC_CLK_TCK) and possibly gethostname
+// #include "mingw_sysconf.h" // for sysconf(_SC_CLK_TCK) and possibly gethostname
 #endif
 #endif
 
