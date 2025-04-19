@@ -35,7 +35,6 @@ Copyright (C) 2009 The Scripps Research Institute. All rights reserved.
 #include <ctype.h> /* tolower,isascii,isdigit */
 #ifdef NOTNEEDED
 #ifdef _WIN32
-#include <Winsock2.h>
 #include "util.h"
 #endif
 #endif
