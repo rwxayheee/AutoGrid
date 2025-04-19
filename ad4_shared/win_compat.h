@@ -6,7 +6,9 @@
 #include <io.h>
 #include <direct.h>
 #include <process.h>
-#include <winsock2.h> // provides struct timeval
+#ifndef _WINSOCKAPI_    // Prevents <winsock.h> from being included
+#include <winsock2.h>
+#endif
 #include <windows.h>   // MUST come after winsock2.h
 #include <ctime>
 #include <cstring>
