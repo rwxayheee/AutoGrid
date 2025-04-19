@@ -29,7 +29,7 @@ Copyright (C) 2009 The Scripps Research Institute. All rights reserved.
 #include "parameters.h"
 
 
-void	banner( char * version_num, FILE *fp );
+void	banner( const char * version_num, FILE *fp );
 int setflags(int, char **, const char *, int, int, int, FILE **);
 ParameterEntry * apm_find( const char key[] );
 void    apm_enter( const char key[], ParameterEntry value );
