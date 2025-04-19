@@ -47,6 +47,7 @@ static Boole string_ends_with(const char *const a, const char *const b);
 
 static char parameter_library[MAX_CHARS];
 
+extern "C" {
 void read_parameter_library(
 	FILE *logFile,
 	const int outlev,
@@ -198,6 +199,7 @@ void read_parameter_library(
         } // switch
     } // while there is another line of parameters to read in
 }
+
 
 void setup_parameter_library(FILE *logFile, int outlev, 
     const char *model_text, Unbound_Model unbound_model,
@@ -381,6 +383,8 @@ void setup_parameter_library(FILE *logFile, int outlev,
         } // switch
     } // while there is another line of parameters to read in
 }
+
+} // extern "C"
 
 const char * report_parameter_library() {
     return parameter_library;
