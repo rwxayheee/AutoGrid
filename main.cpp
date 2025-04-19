@@ -2685,7 +2685,7 @@ if (outlev>LOGRUNV) {
  * Designed 2018-11 by Stefano Forli, coded by MPique
  */
 if (disorder_h) {
-    int hcountstat[num_receptor_atoms]; /* for disorder table printing only */
+    std::vector<int> hcountstat(num_receptor_atoms);
 
     fprintf(logFile, "\nSetting list of disordered atom groups.\n");
     for (int ia=0; ia<num_receptor_atoms; ia++) {
