@@ -6,7 +6,8 @@
 #include <io.h>
 #include <direct.h>
 #include <process.h>
-#include <windows.h>
+#include <winsock2.h> // provides struct timeval
+#include <windows.h>   // MUST come after winsock2.h
 #include <ctime>
 #include <cstring>
 
@@ -23,8 +24,6 @@
 #ifndef bzero
 #define bzero(ptr, size) memset((ptr), 0, (size))
 #endif
-
-#include <winsock2.h> // provides struct timeval
 
 inline int gettimeofday(struct timeval* tp, void*) {
   FILETIME ft;
