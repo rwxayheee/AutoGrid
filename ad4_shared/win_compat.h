@@ -2,12 +2,6 @@
 #ifndef WIN_COMPAT_H
 #define WIN_COMPAT_H
 
-#define NOMINMAX
-#define WIN32_LEAN_AND_MEAN
-#define HAVE_SYS_TIME_H
-
-#include <windows.h>
-#include <winsock2.h>
 #include <io.h>
 #include <direct.h>
 #include <process.h>
@@ -15,6 +9,7 @@
 #include <cstring>
 #include <time.h>
 
+// Portable function aliases
 #define strcasecmp _stricmp
 #define strdup     _strdup
 #define strncasecmp _strnicmp
@@ -39,39 +34,11 @@ struct tms {
 };
 #endif
 
-// Only declare here; implement in win_compat.cc
+// Declarations only – definitions go in win_compat.cc
 clock_t ad4_times(struct tms* buffer);
-
-inline int gettimeofday(struct timeval* tp, void*) {
-  FILETIME ft;
-  GetSystemTimeAsFileTime(&ft);
-  unsigned __int64 t = ((unsigned __int64)ft.dwHighDateTime << 32) + ft.dwLowDateTime;
-  t -= 116444736000000000ULL;
-  tp->tv_sec = (long)(t / 10000000ULL);
-  tp->tv_usec = (long)((t % 10000000ULL) / 10);
-  return 0;
-}
-
-#ifndef _SC_CLK_TCK
-#define _SC_CLK_TCK 3
-#endif
-
-#ifndef CLOCKS_PER_SEC
-#define CLOCKS_PER_SEC 1000
-#endif
-
-inline long sysconf(int name) {
-  if (name == _SC_CLK_TCK) {
-    return CLOCKS_PER_SEC;
-  } else {
-    return -1L;
-  }
-}
-
-inline int gethostname(char* name, size_t len) {
-  DWORD dlen = static_cast<DWORD>(len);
-  return GetComputerNameA(name, &dlen) ? 0 : -1;
-}
+int gettimeofday(struct timeval* tp, void*);
+int gethostname(char* name, size_t len);
+long sysconf(int name);
 
 #endif // WIN_COMPAT_H
 #endif // _WIN32

@@ -260,12 +260,6 @@ static const struct {
 #ifndef MACROS
 #define MACROS
 
-#ifdef _WIN32
-  #undef max
-  #undef min
-  #undef sq
-#endif
-
 #define equal(a,b) ( strncmp(a,b,(size_t) strlen(b)) == (int)0 )
 
 #define max(x,y)     ( ((x) > (y)) ? (x) : (y) )
