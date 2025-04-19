@@ -1,7 +1,10 @@
 #ifdef _WIN32
 #ifndef WIN_COMPAT_H
 #define WIN_COMPAT_H
+
+#define NOMINMAX
 #define HAVE_SYS_TIME_H
+
 
 #include <io.h>
 #include <direct.h>
@@ -12,10 +15,7 @@
 #ifndef _WINSOCKAPI_    // Prevents <winsock.h> from being included
 #include <winsock2.h>
 #endif
-#define NOMINMAX
-#include <windows.h>   // MUST come after winsock2.h
-#include <ctime>
-#include <cstring>
+#include <windows.h>
 
 #define strcasecmp _stricmp
 #define strdup     _strdup
