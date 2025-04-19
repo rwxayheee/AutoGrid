@@ -44,6 +44,7 @@ Copyright (C) 2009 The Scripps Research Institute. All rights reserved.
 #include <stdio.h>
 #include <search.h>
 #include <string.h>
+#include <vector>
 #include <time.h>
 #include <stdlib.h>
 #ifndef HAVE_SYSCONF
