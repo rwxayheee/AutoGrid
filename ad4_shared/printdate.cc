@@ -41,7 +41,7 @@ Copyright (C) 2009 The Scripps Research Institute. All rights reserved.
 #include "printdate.h"
 // this source file is shared by AutoDock and AutoGrid
 
-void printdate( FILE *const fp, const int flag )
+void printdate(FILE *fp, int flag)
 {
     time_t tn; /* tn = "time_now" */
     char *StringTimeDate;

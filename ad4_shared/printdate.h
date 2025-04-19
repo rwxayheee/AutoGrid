@@ -32,5 +32,5 @@ Copyright (C) 2009 The Scripps Research Institute. All rights reserved.
 
 #include "autocomm.h"
 
-void  printdate( FILE  *const fp, const int flag );
+void printdate(FILE *fp, int flag);
 #endif

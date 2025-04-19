@@ -38,7 +38,7 @@ int gpfparser( char line[LINE_LEN] );
 int main( int argc, char **argv );
 int parsetypes(char * line, char *words[], int maxwords);
 void prHMSfixed( float t, FILE *fp );
-void printdate( FILE *fp, int flag );
+void printdate(FILE *fp, int flag);
 void printhms( float t );
 int strindex(const char s[], const char t[]);
 
