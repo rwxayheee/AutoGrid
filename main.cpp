@@ -24,7 +24,7 @@ Copyright (C) 2009 The Scripps Research Institute. All rights reserved.
 
  */
 #ifdef _WIN32
-#include <win_compat.h>
+#include "win_compat.h"
 #else
 #include <sys/param.h>
 #include <unistd.h> /* long sysconf(int name) */

@@ -32,7 +32,7 @@ Copyright (C) 2009 The Scripps Research Institute. All rights reserved.
 #include <sys/types.h>
 
 #ifdef _WIN32
-#include <win_compat.h>
+#include "win_compat.h"
 #else
 #include <unistd.h>
 #endif

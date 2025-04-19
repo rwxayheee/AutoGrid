@@ -32,7 +32,7 @@ static const char* const ident[] = {ident[1], "@(#)$Id: targetfile.cc,v 1.1 2020
 #include <ctype.h> // for isspace()
 #include <string.h>
 #ifdef _WIN32
-#include <win_compat.h>
+#include "win_compat.h"
 #else
 #include <unistd.h> // for mkstemps()
 #endif

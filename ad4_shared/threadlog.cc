@@ -37,7 +37,7 @@ Copyright (C) 2009 The Scripps Research Institute. All rights reserved.
 /* tempnam is in <stdio.h>  */
 #include <stdlib.h>
 #ifdef _WIN32
-#include <win_compat.h>
+#include "win_compat.h"
 #else
 #include <unistd.h>
 #endif
