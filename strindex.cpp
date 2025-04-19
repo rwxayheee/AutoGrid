@@ -28,7 +28,7 @@ Copyright (C) 2009 The Scripps Research Institute. All rights reserved.
 
 /*----------------------------------------------------------------------------*/
 
-int strindex( char s[], char t[])
+int strindex( const char s[], const char t[])
 
 /*----------------------------------------------------------------------------*/
 
