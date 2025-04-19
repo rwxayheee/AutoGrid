@@ -47,6 +47,6 @@ int openFile( const char *const filename,
 	      const Boole       mayExit,
 	      FILE *logFile);
 
-FILE *ad_fopen(const char *const path, const char *const mode, FILE *logFile);
+FILE *ad_fopen(const char *path, const char *mode, FILE *logFile);
 
 #endif

@@ -29,17 +29,17 @@ Copyright (C) 2009 The Scripps Research Institute. All rights reserved.
 #include "parameters.h"
 
 
-void	banner( const char * version_num, FILE *fp );
+void banner( const char * version_num, FILE *fp );
 int setflags(int, char **, const char *, int, int, int, FILE **);
 ParameterEntry * apm_find( const char key[] );
-void    apm_enter( const char key[], ParameterEntry value );
-int	    check_size( int nelements, char axischar, FILE *fp );
-int	    gpfparser( char line[LINE_LEN] );
-int	    main( int argc, char **argv );
-int	    parsetypes(char * line, char *words[], int maxwords);
-void	prHMSfixed( float t, FILE *fp );
-void	printdate( FILE *fp, int flag );
-void	printhms( float t );
-int strindex(char str[], const char pattern[]);
+void apm_enter( const char key[], ParameterEntry value );
+int check_size( int nelements, char axischar, FILE *fp );
+int gpfparser( char line[LINE_LEN] );
+int	main( int argc, char **argv );
+int	parsetypes(char * line, char *words[], int maxwords);
+void prHMSfixed( float t, FILE *fp );
+void printdate( FILE *fp, int flag );
+void printhms( float t );
+int strindex(const char s[], const char t[]) 
 
 /* EOF */
