@@ -28,7 +28,7 @@
 #include <stdio.h>
 #include "autogrid.h"
 
-void banner(const char *version_num, FILE *fp)
+void banner(const char *version_num, FILE *logFile)
 
 {
 

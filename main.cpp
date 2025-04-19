@@ -134,7 +134,7 @@ static double vect_normalize ( double v1[XYZ] );
 // print_error() is used with error_level where
 // error_level is defined in autogrid.h
 
-void print_error(FILE *fileptr, int error_level, const char *message)
+void print_error(FILE *logFile, int error_level, const char *message)
     // print an error or informational message to a file-pointer or
     // standard error
 {

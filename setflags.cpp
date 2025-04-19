@@ -44,7 +44,7 @@ extern int  debug;
 
 /*----------------------------------------------------------------------------*/
 
-int setflags( int argc, char **argv, char *version, int use_bhtree, int use_omp, int maxthreads, FILE **logFile /* may be modified here */ )
+int setflags(int argc, char **argv, const char *version, int use_bhtree, int use_omp, int maxthreads, FILE **logFile)
 
 /*----------------------------------------------------------------------------*/
 

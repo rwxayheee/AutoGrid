@@ -29,6 +29,7 @@ Copyright (C) 2009 The Scripps Research Institute. All rights reserved.
 #include "dpftoken.h"
 #include "partokens.h"
 
+
 /******************************************************************************
  *      Name: constants.h                                                     *
  *  Function: Automated Docking of Small Molecule to Macromolecule            *
