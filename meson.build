@@ -1,3 +1,6 @@
+option('static_runtime', type: 'boolean', value: false,
+       description: 'Link with the static MSVC runtime to produce a self-contained .exe')
+
 project('autogrid', 'cpp',
     version: '4.2.8',
     default_options: ['cpp_std=c++11', 'buildtype=release']
@@ -16,10 +19,14 @@ openmp_dep = dependency('openmp', required: false)  # OpenMP if available
 
 # Compiler flags
 if cc.get_id() == 'msvc'
+  static_runtime = get_option('static_runtime')
+  runtime_flag = static_runtime ? '/MT' : '/MD'
+
   common_flags = [
-    '/W3',              # Equivalent to -Wall
-    '/O2',              # Optimization
-    '/DWIN32',          # Define WIN32 macro
+    '/W3',
+    '/O2',
+    runtime_flag,
+    '/DWIN32',
     '/DUSE_8A_NBCUTOFF',
     '/DUSE_DOUBLE',
     '/DPACKAGE_BUGREPORT="autodock@scripps.edu"'
