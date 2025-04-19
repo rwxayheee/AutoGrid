@@ -108,6 +108,10 @@ sources = files(
     # 'version.h' 
 )
 
+if host_machine.system() == 'windows'
+  sources += files('ad4_shared/win_compat.cc')
+endif
+
 python = import('python').find_installation()
 
 gen_default_params = custom_target(
