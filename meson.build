@@ -1,10 +1,11 @@
-option('static_runtime', type: 'boolean', value: false,
-       description: 'Link with the static MSVC runtime to produce a self-contained .exe')
-
 project('autogrid', 'cpp',
     version: '4.2.8',
     default_options: ['cpp_std=c++11', 'buildtype=release']
 )
+
+# Optionally, allow MSVC build into self-contained .exe
+option('static_runtime', type: 'boolean', value: false,
+       description: 'Link with the static MSVC runtime to produce a self-contained .exe')
 
 # Define the compiler
 cc = meson.get_compiler('cpp')
