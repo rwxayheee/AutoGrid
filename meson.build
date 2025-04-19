@@ -3,10 +3,6 @@ project('autogrid', 'cpp',
     default_options: ['cpp_std=c++11', 'buildtype=release']
 )
 
-# Optionally, allow MSVC build into self-contained .exe
-option('static_runtime', type: 'boolean', value: false,
-       description: 'Link with the static MSVC runtime to produce a self-contained .exe')
-
 # Define the compiler
 cc = meson.get_compiler('cpp')
 
@@ -20,7 +16,9 @@ openmp_dep = dependency('openmp', required: false)  # OpenMP if available
 
 # Compiler flags
 if cc.get_id() == 'msvc'
-  static_runtime = get_option('static_runtime')
+  # Force static MSVC runtime to produce a self-contained .exe
+  # To change this, manually switch '/MT' to '/MD' below
+  static_runtime = true
   runtime_flag = static_runtime ? '/MT' : '/MD'
 
   common_flags = [
