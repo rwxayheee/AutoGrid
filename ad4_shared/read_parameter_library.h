@@ -36,13 +36,21 @@ void read_parameter_library(
 	Linear_FE_Model *AD4
         );
 
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 void setup_parameter_library(
-	FILE *logFile,
-        const int outlev,
-        const char * model_text,
-        const Unbound_Model unbound_model,
-	Linear_FE_Model *AD4
-        );
+    FILE *logFile,
+    int outlev,
+    const char *model_text,
+    Unbound_Model unbound_model,
+    Linear_FE_Model *AD4
+);
+
+#ifdef __cplusplus
+}
+#endif
 
 // The returned string is not supposed to be changed
 const char * report_parameter_library();
