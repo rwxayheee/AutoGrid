@@ -29,6 +29,18 @@ Copyright (C) 2009 The Scripps Research Institute. All rights reserved.
 #include "dpftoken.h"
 #include "partokens.h"
 
+#ifdef _WIN32
+  #undef max
+  #undef min
+  #undef lookup
+  #undef sq
+  #undef sq_hyp
+  #undef equal
+  #undef random_sign
+  #undef CLOCKS_PER_SEC
+  #undef TRUE
+  #undef FALSE
+#endif
 
 /******************************************************************************
  *      Name: constants.h                                                     *
