@@ -30,8 +30,7 @@ Copyright (C) 2009 The Scripps Research Institute. All rights reserved.
 
 
 void	banner( char * version_num, FILE *fp );
-int	    setflags( int argc, char **argv, char * version_num, 
-  int use_bhtree, int use_omp, int maxthreads, FILE **fp /* set */);
+int setflags(int, char **, const char *, int, int, int, FILE **);
 ParameterEntry * apm_find( const char key[] );
 void    apm_enter( const char key[], ParameterEntry value );
 int	    check_size( int nelements, char axischar, FILE *fp );
@@ -41,6 +40,6 @@ int	    parsetypes(char * line, char *words[], int maxwords);
 void	prHMSfixed( float t, FILE *fp );
 void	printdate( FILE *fp, int flag );
 void	printhms( float t );
-int	    strindex( char s[], char t[] );
+int strindex(char str[], const char pattern[]);
 
 /* EOF */

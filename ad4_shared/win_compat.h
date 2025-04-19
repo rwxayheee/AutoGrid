@@ -35,10 +35,14 @@ struct tms {
 #endif
 
 // Declarations only – definitions go in win_compat.cc
-clock_t ad4_times(struct tms* buffer);
+clock_t times(struct tms* buffer);
 int gettimeofday(struct timeval* tp, void*);
 int gethostname(char* name, size_t len);
 long sysconf(int name);
+
+#ifndef _SC_CLK_TCK
+#define _SC_CLK_TCK 3
+#endif
 
 #endif // WIN_COMPAT_H
 #endif // _WIN32

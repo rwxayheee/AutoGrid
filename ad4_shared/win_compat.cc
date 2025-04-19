@@ -3,16 +3,11 @@
 #include <string.h>
 #include "win_compat.h"
 
-// Define fallback if not already defined
-#ifndef _SC_CLK_TCK
-#define _SC_CLK_TCK 3
-#endif
-
 #ifndef CLOCKS_PER_SEC
 #define CLOCKS_PER_SEC 1000
 #endif
 
-clock_t ad4_times(struct tms* buffer) {
+clock_t times(struct tms* buffer) {
   FILETIME createTime, exitTime, kernelTime, userTime;
   if (GetProcessTimes(GetCurrentProcess(), &createTime, &exitTime, &kernelTime, &userTime)) {
     ULARGE_INTEGER u, k;
