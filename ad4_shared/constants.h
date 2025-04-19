@@ -233,9 +233,9 @@ Copyright (C) 2009 The Scripps Research Institute. All rights reserved.
 #define LOGETABLES 7
 #define LOGNBINTE 8   // analysis.cc nonbond internal energy table
 #define LOGNBINTEV 9   // analysis.cc;nbe.cc nonbond internal energy table verbose
-const struct {
+static const struct {
 	int value;
-	char *key;
+	const char *key;
 	} outlev_lookup[] = { 
  {LOGMIN, "min"},
  {LOGMINCLUST, "mincluster"},

@@ -31,6 +31,10 @@ Copyright (C) 2009 The Scripps Research Institute. All rights reserved.
 #include "autogrid.h"
 #include "constants.h"
 
+#ifdef _WIN32
+#include <win_compat.h>
+#endif
+
 int gpfparser( char line[LINE_LEN] )
 
 /******************************************************************************/
