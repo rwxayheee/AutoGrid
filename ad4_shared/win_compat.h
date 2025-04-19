@@ -12,6 +12,7 @@
 #ifndef _WINSOCKAPI_    // Prevents <winsock.h> from being included
 #include <winsock2.h>
 #endif
+#define NOMINMAX
 #include <windows.h>   // MUST come after winsock2.h
 #include <ctime>
 #include <cstring>
