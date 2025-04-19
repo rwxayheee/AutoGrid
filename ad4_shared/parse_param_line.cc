@@ -33,6 +33,10 @@ Copyright (C) 2009 The Scripps Research Institute. All rights reserved.
 #include <ctype.h>
 #include "parse_param_line.h"
 
+#ifdef _WIN32
+#include <win_compat.h>
+#endif
+
 #ifdef DEBUG
 extern int debug;
 extern FILE *logFile; // DEBUG only

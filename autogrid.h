@@ -113,7 +113,7 @@ FILE *ad_fopen(const char *path, const char *mode, FILE *logFile);
 #define INFORMATION 1
 #define SUGGESTION 2
 
-void print_error( FILE *fileptr, int error_level, char *message);
+void print_error( FILE *fileptr, int error_level, const char *message);
 
 /*----------------------------------------------------------------------------*/
 /* EOF.                                                                       */

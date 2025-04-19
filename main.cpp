@@ -133,12 +133,12 @@ static double vect_normalize ( double v1[XYZ] );
 // print_error() is used with error_level where
 // error_level is defined in autogrid.h
 
-void print_error( FILE *logFile, int error_level, char *message) 
+void print_error( FILE *logFile, int error_level, const char *message) 
     // print an error or informational message to a file-pointer or
     // standard error
 {
     char output_message[LINE_LEN];
-    char *tag;
+    const char *tag;
 
     switch ( error_level ) {
         case FATAL_ERROR:
@@ -367,7 +367,7 @@ static double solpar[AG_MAX_ATOMS];
 static int atom_type[AG_MAX_ATOMS];
 static hbond_type hbond[AG_MAX_ATOMS];
 static bool disorder[AG_MAX_ATOMS]; 
-static char * hbtname[] = { "D0", "DS", "D1", "AS", "A1", "A2", "AD", "??" }; /* for table printouts only */
+static const char * hbtname[] = { "D0", "DS", "D1", "AS", "A1", "A2", "AD", "??" }; /* for table printouts only */
 
 // two arrays added 2018-11 for tracking h-bond donor/acceptor neighborhoods
 // TODO MP make these dynamic and allocated only if disorder_h flag is true
@@ -556,7 +556,7 @@ double covbarrier = 1000.0;
 const double ln_half = log(0.5);
 
 #ifndef PACKAGE_VERSION
-static char * version_num = "4.2.7.x";
+static const char * version_num = "4.2.7.x";
 #else
 static char * version_num = PACKAGE_VERSION;
 #endif
