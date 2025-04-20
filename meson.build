@@ -23,7 +23,7 @@ if cc.get_id() == 'msvc'
 
   common_flags = [
     '/W3',
-    '/O2',
+    '/O3',
     runtime_flag,
     '/DWIN32',
     '/DUSE_8A_NBCUTOFF',
