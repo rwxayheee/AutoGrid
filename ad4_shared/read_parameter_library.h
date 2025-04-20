@@ -24,41 +24,40 @@ Copyright (C) 2009 The Scripps Research Institute. All rights reserved.
 
  */
 
- #ifndef _READ_PARAMETER_LIBRARY
- #define _READ_PARAMETER_LIBRARY
- 
- #include "autocomm.h"
- 
- #ifdef __cplusplus
- extern "C" {
- #endif
- 
- void read_parameter_library(
-     FILE *logFile,
-     int outlev,
-     const char *FN_parameter_library,
-     Linear_FE_Model *AD4
- );
- 
- void setup_parameter_library(
-     FILE *logFile,
-     int outlev,
-     const char *model_text,
-     Unbound_Model unbound_model,
-     Linear_FE_Model *AD4
- );
- 
- const char *report_parameter_library();
- 
- void setup_distdepdiel(
-     FILE *logFile,
-     int outlev,
-     EnergyTables *ptr_ad_energy_tables  // Holds vdw+Hb, desolvation & dielectric lookup tables
- );
- 
- #ifdef __cplusplus
- }
- #endif
- 
- #endif /* _READ_PARAMETER_LIBRARY */
- 
+#ifndef _READ_PARAMETER_LIBRARY
+#define _READ_PARAMETER_LIBRARY
+
+#include "autocomm.h"
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+void read_parameter_library(
+    FILE *logFile,
+    int outlev,
+    const char *FN_parameter_library,
+    Linear_FE_Model *AD4
+);
+
+void setup_parameter_library(
+    FILE *logFile,
+    int outlev,
+    const char *model_text,
+    Unbound_Model unbound_model,
+    Linear_FE_Model *AD4
+);
+
+const char *report_parameter_library();
+
+void setup_distdepdiel(
+    FILE *logFile,
+    int outlev,
+    EnergyTables *ptr_ad_energy_tables  // Holds vdw+Hb, desolvation & dielectric lookup tables
+);
+
+#ifdef __cplusplus
+}
+#endif
+
+#endif /* _READ_PARAMETER_LIBRARY */
