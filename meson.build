@@ -24,6 +24,9 @@ if cc.get_id() == 'msvc'
   common_flags = [
     '/W3',
     '/Ox',
+    '/fp:precise',
+    '/fp:contract-',
+    '/Qftz-',
     runtime_flag,
     '/DWIN32',
     '/DUSE_8A_NBCUTOFF',
@@ -34,6 +37,8 @@ else
     common_flags = [
         '-Wall',  # All warnings
         '-O3',    # Aggressive optimization
+        '-ffp-contract=off',  # Disable FMA contraction, like '/fp:contract-'
+        '-fno-fast-math',     # Avoid aggressive non-IEEE math transformations
         '-Wno-write-strings',  # Compatibility with older compilers
         '-DUSE_8A_NBCUTOFF',   # Preprocessor defines
         '-DUSE_DOUBLE',
